@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms and semantic elements</title>
+</head>
+
+<body>
+    <!-- semantic elements i used header,nav,main,section,aside,footer: all of these semantic elements help in structuring the page and accessibility and search engine optimization -->
+    <!-- header element i used for the page title and introductory text -->
+    <header>
+        <h1>Form Page application on module4 AND 5</h1>
+        <p>fill the form </p>
+    </header>
+
+    <!-- nav element for the navigation bar -->
+    <nav>
+        <a href="#">Home</a> <!--i used the # to make the link return to the same page i'm on -->
+    </nav>
+
+    <!-- main element for the main content of the page -->
+    <main>
+        <!-- section semantic element forthe form section -->
+        <section>
+            <form action="_blank" method="post" autocomplete="on">
+                <!--i used _blank  with action attribute to open the form in a new tab,
+                 and method attribute to specify the HTTP method here i used post method because the input feilds contains sensitive info and post method send data not inside the URL like get method -->
+                <!-- fieldset for personal information -->
+                <fieldset>
+                    <!-- this is a container for grouping related form elements i used it here to group personal info together-->
+                    <legend>personal information section 1</legend>
+                    <!-- legend element to make title for the fieldset-->
+
+                    <label for="name">Full name</label>
+                    <input type="text" id="name" placeholder="write your name" required>
+                    <!-- required attribute makes the field required to fill from the user and if he tried to submit without filling it the browser will tell him this feild is required-->
+                    <br /><br />
+
+                    <!-- i used label with every input this helps screen readers know and read the feild easily -->
+                    <label for="email">email</label>
+                    <input type="email" id="email" placeholder="email@gmail.com" required>
+
+                    <br /><br />
+                    <label for="password">Password</label>
+                    <input type="password" id="password" minlength="10" required>
+                    <!-- minlength attribute to specify the minimum number of characters required-->
+
+                    <br /><br />
+                    <label for="age">Age</label>
+                    <input type="number" id="age" min="10" max="90">
+                    <!--min and max attributes to specify the range of acceptable values -->
+
+                    <br /><br />
+                    <label for="date">Date</label> <!--used type="date" to create a date picker -->
+                    <input type="date" id="date" name="date">
+                </fieldset>
+                <br />
+
+                <fieldset>
+                    <legend>information section 2</legend>
+                    <p>Gender:</p>
+                    <!-- radio button options so the user can select just one choice 
+                     and the label element here has extra usage that when the user clicks
+                      on the word male or the radio itself it will select the radio button in the two ways-->
+                    <input type="radio" id="male" value="male" name="gender">
+                    <label id="male">male</label>
+                    <input type="radio" id="female" value="female" name="gender">
+                    <label id="female">female</label>
+                    <br /><br />
+
+
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+
+
+                    <br /><br />
+                    <!--to make a drop down list we use select element with option elenemt for each option we want to add , and we can use multiple attribute with it so user can select more than one option 
+                    and the first option is the default selected option and if we want to make othe option is the defualt we use selected attribute -->
+                    <label for="city">City</label>
+                    <select id="city" name="city">
+                        <option value="amman">irbid</option>
+                        <option value="irbid" selected>Amman</option>
+                        <option value="zarqa">zarqa</option>
+                    </select>
+
+                    <br /><br>
+
+                    <label for="job">your job:</label>
+                    <input list="jobs" id="job" name="job">
+                    <datalist id="jobs">
+                        <option value="student">
+                        <option value="developer">
+                        <option value="designer">
+                    </datalist>
+                </fieldset>
+                <br />
+
+                <label for="note">do you have any notes?</label>
+                <br />
+                <textarea id="note" name="note" rows="2" cols="50" placeholder="write your notes"></textarea>
+
+                <br /><br />
+
+                <label>Upload file</label>
+                <input type="file"
+                    name="file"><!--i used here type=file allow us to upload file functionality in our website-->
+                <br><br />
+                <button
+                    type="submit">submit</button><!--type submit i used to submit the form data to the distination specified in the action attribute of the form element usint the method specified in the method attribute -->
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p> thank you</p>
+    </footer>
+
+</body>
+
+</html>
